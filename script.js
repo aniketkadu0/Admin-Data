@@ -2,12 +2,12 @@ window.id;
 function search() {
   var email = $("#email").val();
   $.post({
-    url: "https://red-violet-sockeye-fez.cyclic.app/user/login",
+    url: "https://ccee.cloud/user/login",
     data: { email: "aniketkadu765@gmail.com", password: "Aniket1996@" },
     success: (data) => {
       var AuthToken = data.authtoken;
       $.post({
-        url: `https://red-violet-sockeye-fez.cyclic.app/user/getuserstatus/${email}`,
+        url: `https://ccee.cloud/user/getuserstatus/${email}`,
         headers: { Authorization: AuthToken },
         success: (data) => {
           $("#payment").text(data.paymentStatus);
@@ -24,7 +24,7 @@ function search() {
 
 function update() {
   $.post({
-    url: `https://red-violet-sockeye-fez.cyclic.app/user/paymentstatusupdate/${window.id}`,
+    url: `https://ccee.cloud/user/paymentstatusupdate/${window.id}`,
     success: (data) => {
       $("#result").text(data.message);
     },
